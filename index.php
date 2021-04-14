@@ -4,7 +4,7 @@
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$username = $_POST['username'];
 	$password = $_POST['password'];
-		$sql = "INSERT INTO account(username, password) VALUES ('$username', '$password')";
+		$sql = "UPDATE account SET username=?, password=?";
 	if(pg_query($conn, $sql)){
 		echo "Add successfuly <br>";
 	}else{
